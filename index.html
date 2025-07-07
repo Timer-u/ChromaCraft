@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChromaCraft - Material You 配色方案生成器</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="md3-app">
+      <header class="md3-app-bar">
+        <div class="md3-app-bar__container">
+          <div class="md3-app-bar__content">
+            <span class="material-symbols-rounded md3-app-bar__icon"
+              >palette</span
+            >
+            <h1 class="md3-app-bar__title">ChromaCraft</h1>
+          </div>
+          <div class="md3-app-bar__actions">
+            <button class="md3-icon-button" id="theme-toggle">
+              <span class="material-symbols-rounded">dark_mode</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="md3-main">
+        <section class="md3-hero">
+          <div class="md3-hero__content">
+            <h2 class="md3-display-medium">创建完美的配色方案</h2>
+            <p class="md3-body-large">
+              基于 Material You 设计系统，输入一个颜色，生成和谐的配色方案
+            </p>
+          </div>
+        </section>
+
+        <section class="md3-section">
+          <div class="md3-surface-container">
+            <div class="md3-input-section">
+              <div class="md3-color-input-group">
+                <div class="md3-color-preview-container">
+                  <div class="md3-color-preview" id="color-preview"></div>
+                  <div class="md3-color-preview-overlay"></div>
+                </div>
+                <div class="md3-text-field md3-text-field--filled">
+                  <input
+                    type="text"
+                    id="color-input"
+                    class="md3-text-field__input"
+                    value="#4A6FA5"
+                    required
+                  />
+                  <label class="md3-text-field__label">十六进制颜色值</label>
+                  <div class="md3-text-field__ripple"></div>
+                </div>
+              </div>
+              <button class="md3-button md3-button--filled" id="generate-btn">
+                <span class="md3-button__ripple"></span>
+                <span class="material-symbols-rounded md3-button__icon"
+                  >auto_awesome</span
+                >
+                <span class="md3-button__label">生成配色方案</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="md3-section" id="scheme-section" style="display: none">
+          <h3 class="md3-headline-small">生成的配色方案</h3>
+          <div class="md3-scheme-container" id="scheme-container"></div>
+        </section>
+
+        <section class="md3-section">
+          <h3 class="md3-headline-small">色彩理论基础</h3>
+          <div class="md3-theory-grid">
+            <div class="md3-card md3-card--outlined">
+              <div class="md3-card__content">
+                <span class="material-symbols-rounded md3-card__icon"
+                  >tune</span
+                >
+                <h4 class="md3-title-large">HSL 色彩空间</h4>
+                <p class="md3-body-medium">
+                  HSL（色相、饱和度、明度）比 RGB
+                  更符合人类对颜色的感知。通过调整这三个参数，可以创建和谐的色彩组合。
+                </p>
+              </div>
+            </div>
+            <div class="md3-card md3-card--outlined">
+              <div class="md3-card__content">
+                <span class="material-symbols-rounded md3-card__icon"
+                  >contrast</span
+                >
+                <h4 class="md3-title-large">互补色方案</h4>
+                <p class="md3-body-medium">
+                  在色轮上相对的颜色形成互补色。这种高对比度的组合能创造视觉冲击力，适合需要引人注目的设计。
+                </p>
+              </div>
+            </div>
+            <div class="md3-card md3-card--outlined">
+              <div class="md3-card__content">
+                <span class="material-symbols-rounded md3-card__icon"
+                  >gradient</span
+                >
+                <h4 class="md3-title-large">类似色方案</h4>
+                <p class="md3-body-medium">
+                  相邻的颜色创造和谐统一的视觉效果。这种方案营造舒适的氛围，适合需要柔和过渡的界面设计。
+                </p>
+              </div>
+            </div>
+            <div class="md3-card md3-card--outlined">
+              <div class="md3-card__content">
+                <span class="material-symbols-rounded md3-card__icon"
+                  >accessibility_new</span
+                >
+                <h4 class="md3-title-large">无障碍设计</h4>
+                <p class="md3-body-medium">
+                  所有颜色组合都符合 WCAG 2.1
+                  标准，确保文本与背景的对比度达到无障碍要求，让所有用户都能轻松阅读。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="md3-footer">
+        <p class="md3-body-small">
+          ChromaCraft © 2025 - Built with Material You
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
